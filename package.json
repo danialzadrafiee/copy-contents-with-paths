@@ -1,0 +1,46 @@
+{
+  "name": "copy-contents-with-paths",
+  "displayName": "Copy Contents with Paths",
+  "description": "Copy contents of selected files with their paths",
+  "version": "0.0.5",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.copyContentsWithPaths"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.copyContentsWithPaths",
+        "title": "⭐ Copy Contents with Paths"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerViewletVisible && filesExplorerFocus",
+          "command": "extension.copyContentsWithPaths",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "extension.copyContentsWithPaths"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^14.0.0"
+  }
+}
